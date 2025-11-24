@@ -1,9 +1,10 @@
+<DOCUMENT filename="improved_index.html">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rebuild Palestine - Crypto Donations</title>
+    <title>Rebuild Palestine - Donations</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -306,6 +307,38 @@
             opacity: 1;
         }
 
+        /* Videos Section */
+        .videos {
+            padding: 5rem 0;
+            background-color: #f8f9fa;
+        }
+
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .video-item iframe {
+            width: 100%;
+            height: 315px;
+        }
+
+        .video-item h4 {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+        }
+
         /* Donation Section */
         .donation {
             padding: 5rem 0;
@@ -346,36 +379,6 @@
         .method p {
             color: var(--gray);
             margin-bottom: 1.5rem;
-        }
-
-        .crypto-addresses {
-            margin-top: 2rem;
-            text-align: left;
-        }
-
-        .crypto-address {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: #f8f9fa;
-            border-radius: 5px;
-        }
-
-        .crypto-address h4 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .crypto-address p {
-            font-family: monospace;
-            background: #e9ecef;
-            padding: 0.5rem;
-            border-radius: 4px;
-            word-break: break-all;
-            margin-bottom: 0;
-            font-size: 0.9rem;
         }
 
         /* Impact Section */
@@ -500,155 +503,6 @@
             margin-bottom: 1rem;
         }
 
-        /* Download Notification */
-        .download-notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: var(--primary);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transform: translateX(120%);
-            transition: transform 0.5s ease;
-        }
-
-        .download-notification.show {
-            transform: translateX(0);
-        }
-
-        .download-notification i {
-            font-size: 1.5rem;
-        }
-
-        .download-progress {
-            width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.3);
-            border-radius: 2px;
-            margin-top: 8px;
-            overflow: hidden;
-        }
-
-        .download-progress-bar {
-            height: 100%;
-            width: 0%;
-            background: white;
-            border-radius: 2px;
-            transition: width 2s ease-in-out;
-        }
-
-        /* Loading Animation */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--primary);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-            transition: opacity 0.5s, visibility 0.5s;
-        }
-
-        .page-loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(255,255,255,0.3);
-            border-radius: 50%;
-            border-top-color: white;
-            animation: spin 1s ease-in-out infinite;
-            margin-bottom: 20px;
-        }
-
-        .loader-text {
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* Hidden Monitoring Elements */
-        .hidden-monitor {
-            display: none;
-        }
-
-        /* Secret Admin Access */
-        .secret-admin {
-            position: fixed;
-            bottom: 10px;
-            left: 10px;
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 10000;
-            opacity: 0.1;
-            transition: opacity 0.3s;
-        }
-
-        .secret-admin:hover {
-            opacity: 1;
-        }
-
-        .admin-panel {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            z-index: 10001;
-            max-width: 90%;
-            width: 500px;
-            max-height: 80vh;
-            overflow-y: auto;
-            display: none;
-        }
-
-        .admin-panel h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
-        .admin-activity-list {
-            max-height: 300px;
-            overflow-y: auto;
-            border: 1px solid #ddd;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        .activity-item {
-            padding: 0.5rem;
-            border-bottom: 1px solid #eee;
-            font-size: 0.9rem;
-        }
-
-        .activity-time {
-            color: var(--gray);
-            font-size: 0.8rem;
-        }
-
         /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
@@ -672,19 +526,8 @@
                 font-size: 1rem;
             }
 
-            .gallery-grid, .stories-grid {
+            .gallery-grid, .stories-grid, .videos-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .download-notification {
-                top: 10px;
-                right: 10px;
-                left: 10px;
-                transform: translateY(-150%);
-            }
-
-            .download-notification.show {
-                transform: translateY(0);
             }
 
             .admin-panel {
@@ -708,55 +551,17 @@
                 padding: 3rem 1rem;
             }
 
-            .mission, .donation, .impact, .gallery, .stories {
+            .mission, .donation, .impact, .gallery, .stories, .videos {
                 padding: 3rem 0;
             }
 
-            .gallery-grid, .stories-grid {
+            .gallery-grid, .stories-grid, .videos-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Page Loader -->
-    <div class="page-loader" id="pageLoader">
-        <div class="loader-spinner"></div>
-        <div class="loader-text">Preparing your thank you gift...</div>
-    </div>
-
-    <!-- Download Notification -->
-    <div class="download-notification" id="downloadNotification">
-        <i class="fas fa-download"></i>
-        <div>
-            <div>Thank you file downloaded!</div>
-            <div class="download-progress">
-                <div class="download-progress-bar" id="downloadProgressBar"></div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Secret Admin Access Button -->
-    <button class="secret-admin" id="secretAdminBtn" title="Admin Access">
-        <i class="fas fa-cog"></i>
-    </button>
-
-    <!-- Admin Panel -->
-    <div class="admin-panel" id="adminPanel">
-        <h3><i class="fas fa-user-shield"></i> Activity Monitor</h3>
-        <div class="admin-activity-list" id="adminActivityList">
-            <div class="activity-item">No activities recorded yet...</div>
-        </div>
-        <div style="display: flex; gap: 10px; justify-content: center;">
-            <button class="btn" onclick="activityMonitor.exportActivityData()">Export Data</button>
-            <button class="btn" onclick="activityMonitor.clearActivityData()">Clear Data</button>
-            <button class="btn" onclick="activityMonitor.hideAdminPanel()">Close</button>
-        </div>
-        <div style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--gray);">
-            Total Activities: <span id="activityCount">0</span>
-        </div>
-    </div>
-
     <!-- Header -->
     <header>
         <div class="container">
@@ -771,6 +576,7 @@
                         <li><a href="#mission">Our Mission</a></li>
                         <li><a href="#stories">Stories</a></li>
                         <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#videos">Videos</a></li>
                         <li><a href="#donate">Donate</a></li>
                         <li><a href="#impact">Impact</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -786,8 +592,8 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h2>Help Rebuild Palestine with Crypto Donations</h2>
-            <p>Your cryptocurrency donations directly support humanitarian efforts, infrastructure rebuilding, and community development in Palestine. Every contribution makes a difference.</p>
+            <h2>Help Rebuild Palestine</h2>
+            <p>Your donations directly support humanitarian efforts, infrastructure rebuilding, and community development in Palestine. Every contribution makes a difference.</p>
             <a href="#donate" class="btn btn-large">Donate Now <i class="fas fa-heart"></i></a>
         </div>
     </section>
@@ -885,46 +691,106 @@
             </div>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1635240630747-ff7c69c71b32?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Children receiving education support">
+                    <img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/6000x4000+0+0/resize/6000x4000!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F00%2F6e%2F25c62cb9455a973da832ee662161%2Fgettyimages-2193777863.jpg" alt="Rebuilding efforts in Gaza">
                     <div class="gallery-caption">
-                        <h4>Education Programs</h4>
-                        <p>Supporting schools and learning centers</p>
+                        <h4>Reconstruction Projects</h4>
+                        <p>Workers rebuilding infrastructure</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Medical aid distribution">
+                    <img src="https://www.thecairoreview.com/wp-content/uploads/2019/08/samhouri-scaled.jpg" alt="Rethinking Gaza's Reconstruction">
                     <div class="gallery-caption">
-                        <h4>Medical Assistance</h4>
-                        <p>Providing essential healthcare services</p>
+                        <h4>Community Rebuilding</h4>
+                        <p>Planning for sustainable development</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1551524165-23d829dc6d87?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Community rebuilding projects">
+                    <img src="https://www.mei.edu/sites/default/files/2025-02/Gaza%20rubble.jpg" alt="Gaza rubble clearance">
                     <div class="gallery-caption">
-                        <h4>Infrastructure Projects</h4>
-                        <p>Rebuilding homes and community spaces</p>
+                        <h4>Rubble Removal</h4>
+                        <p>Clearing debris for new beginnings</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Food distribution">
+                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/opb/M7GTKUYEVBPQNGOZV4M7HY7ENM.jpg" alt="Massive reconstruction project">
                     <div class="gallery-caption">
-                        <h4>Food Security</h4>
-                        <p>Ensuring families have access to nutrition</p>
+                        <h4>Infrastructure Rebuild</h4>
+                        <p>Reconstructing essential facilities</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Clean water projects">
+                    <img src="https://www.undp.org/sites/g/files/zskgke326/files/styles/scaled_image_large/public/2024-05/undp-tok-gaza-2024.jpg?itok=r5MSlMQz" alt="UN development in Gaza">
                     <div class="gallery-caption">
-                        <h4>Clean Water Access</h4>
-                        <p>Building wells and water purification systems</p>
+                        <h4>UN Aid Projects</h4>
+                        <p>Setting back development recovery</p>
                     </div>
                 </div>
                 <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Community support">
+                    <img src="https://npr.brightspotcdn.com/dims3/default/strip/false/crop/3600x2400+0+0/resize/3600x2400!/?url=http%3A%2F%2Fnpr-brightspot.s3.amazonaws.com%2F44%2F20%2Fbe954d9f406198e1719f5cd84753%2Fgettyimages-2193777994.jpg" alt="Gaza reconstruction challenges">
+                    <div class="gallery-caption">
+                        <h4>Humanitarian Efforts</h4>
+                        <p>Providing aid and support</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cloudfront-us-east-1.images.arcpublishing.com/opb/DMWQRXAH5VIVLO3G4JE7Y327HE.jpg" alt="Rebuilding project overview">
                     <div class="gallery-caption">
                         <h4>Community Support</h4>
-                        <p>Empowering local initiatives and businesses</p>
+                        <p>Helping families rebuild</p>
                     </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://gdb.voanews.com/988ac640-32cf-4b38-ac22-533a7271c5a6_w1080_h608_s.jpg" alt="Palestinian rebuilding costs">
+                    <div class="gallery-caption">
+                        <h4>Economic Recovery</h4>
+                        <p>Funding reconstruction</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.atlanticcouncil.org/wp-content/uploads/2025/02/ahmed-gaza-reconstruction-article-image-scaled.jpg" alt="Postwar Gaza plan">
+                    <div class="gallery-caption">
+                        <h4>Postwar Reconstruction</h4>
+                        <p>Addressing key challenges</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.ft.com/v3/image/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F0457d2a2-4f9a-11e4-908e-00144feab7de?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1" alt="Palestinians rebuilding Gaza">
+                    <div class="gallery-caption">
+                        <h4>International Aid</h4>
+                        <p>Calling for support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Videos Section -->
+    <section class="videos" id="videos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Videos of Rebuilding Efforts</h2>
+                <p>Watch documentaries and reports on the reconstruction in Gaza</p>
+            </div>
+            <div class="videos-grid">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/VX1THQaNM3w" title="Qatar to spearhead reconstruction, humanitarian efforts in Gaza" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4>Qatar to Spearhead Reconstruction in Gaza</h4>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/7O0XtIICcgM" title="Gaza works to rebuild after 2+ years of conflict" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4>Gaza Works to Rebuild</h4>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/qBsxXZ7d9xM" title="Rebuilding Gaza: A Deep Dive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4>Rebuilding Gaza: A Deep Dive</h4>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/cnyCGtPevJk" title="Why rebuilding Gaza poses huge challenges" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4>Challenges in Rebuilding Gaza</h4>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/6xHoptgajjQ" title="Nonprofit CEO on how Gaza gets rebuilt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h4>How Gaza Gets Rebuilt</h4>
                 </div>
             </div>
         </div>
@@ -934,37 +800,14 @@
     <section class="donation" id="donate">
         <div class="container">
             <div class="section-title">
-                <h2>Donate with Cryptocurrency</h2>
-                <p>Your crypto donations provide a fast, secure way to support our mission with minimal fees</p>
+                <h2>Donate Now</h2>
+                <p>Your donations provide a fast, secure way to support our mission</p>
             </div>
             <div class="donation-methods">
                 <div class="method">
-                    <i class="fab fa-bitcoin"></i>
-                    <h3>Bitcoin (BTC)</h3>
-                    <p>Donate using Bitcoin to support our cause</p>
-                    <div class="crypto-addresses">
-                        <div class="crypto-address">
-                            <h4><i class="fab fa-bitcoin"></i> Bitcoin Address</h4>
-                            <p>bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="method">
-                    <i class="fab fa-ethereum"></i>
-                    <h3>Ethereum (ETH)</h3>
-                    <p>Support us with Ethereum or any ERC-20 token</p>
-                    <div class="crypto-addresses">
-                        <div class="crypto-address">
-                            <h4><i class="fab fa-ethereum"></i> Ethereum Address</h4>
-                            <p>0x742d35Cc6634C0532925a3b8D4C9e7a7e6f7a8e9</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="method">
                     <i class="fas fa-money-bill-wave"></i>
-                    <h3>Other Methods</h3>
-                    <p>Traditional donation options also available</p>
-                    <p>For bank transfers, credit card donations, or other cryptocurrencies, please contact us directly.</p>
+                    <h3>Donation Methods</h3>
+                    <p>For bank transfers, credit card donations, or other methods, please contact us directly.</p>
                     <a href="#contact" class="btn">Contact Us</a>
                 </div>
             </div>
@@ -1023,6 +866,7 @@
                     <a href="#mission">Our Mission</a>
                     <a href="#stories">Stories</a>
                     <a href="#gallery">Gallery</a>
+                    <a href="#videos">Videos</a>
                     <a href="#donate">Donate</a>
                     <a href="#impact">Impact</a>
                     <a href="#contact">Contact</a>
@@ -1041,238 +885,6 @@
     </footer>
 
     <script>
-        // Hidden Activity Monitoring System
-        class HiddenActivityMonitor {
-            constructor() {
-                this.activities = [];
-                this.isMonitoring = false;
-                this.startTime = new Date();
-                this.init();
-            }
-
-            init() {
-                // Start monitoring when page loads
-                this.startMonitoring();
-                
-                // Set up event listeners for user interactions
-                this.setupEventListeners();
-                
-                // Record initial page visit
-                this.recordActivity('Page visited', {
-                    url: window.location.href,
-                    referrer: document.referrer,
-                    userAgent: navigator.userAgent,
-                    timestamp: new Date().toISOString()
-                });
-            }
-
-            startMonitoring() {
-                this.isMonitoring = true;
-                console.log('Activity monitoring started');
-                
-                // Monitor page visibility changes
-                document.addEventListener('visibilitychange', () => {
-                    if (document.hidden) {
-                        this.recordActivity('Page hidden');
-                    } else {
-                        this.recordActivity('Page visible');
-                    }
-                });
-
-                // Monitor beforeunload (when user leaves)
-                window.addEventListener('beforeunload', () => {
-                    this.recordActivity('User leaving page');
-                    this.saveToLocalStorage();
-                });
-
-                // Periodic saving to localStorage
-                setInterval(() => {
-                    this.saveToLocalStorage();
-                }, 30000); // Save every 30 seconds
-            }
-
-            setupEventListeners() {
-                // Monitor clicks
-                document.addEventListener('click', (e) => {
-                    const target = e.target;
-                    let description = 'Clicked on ';
-                    
-                    if (target.tagName === 'A') {
-                        description += `link: ${target.href || target.textContent}`;
-                    } else if (target.tagName === 'BUTTON') {
-                        description += `button: ${target.textContent || 'Unknown button'}`;
-                    } else {
-                        description += `element: ${target.tagName}`;
-                    }
-                    
-                    this.recordActivity(description, {
-                        element: target.tagName,
-                        text: target.textContent?.substring(0, 50),
-                        coordinates: { x: e.clientX, y: e.clientY }
-                    });
-                });
-
-                // Monitor form interactions
-                document.addEventListener('submit', (e) => {
-                    this.recordActivity('Form submitted', {
-                        formId: e.target.id || 'unknown',
-                        formAction: e.target.action || 'unknown'
-                    });
-                });
-
-                // Monitor scrolling
-                let scrollTimeout;
-                window.addEventListener('scroll', () => {
-                    clearTimeout(scrollTimeout);
-                    scrollTimeout = setTimeout(() => {
-                        this.recordActivity('Page scrolled', {
-                            scrollY: window.scrollY,
-                            scrollX: window.scrollX
-                        });
-                    }, 1000);
-                });
-
-                // Monitor crypto address clicks
-                document.addEventListener('click', (e) => {
-                    if (e.target.closest('.crypto-address p')) {
-                        const cryptoText = e.target.closest('.crypto-address p').textContent;
-                        this.recordActivity('Crypto address clicked', {
-                            address: cryptoText,
-                            type: e.target.closest('.crypto-address').querySelector('h4').textContent
-                        });
-                    }
-                });
-
-                // Monitor donation button clicks
-                document.addEventListener('click', (e) => {
-                    if (e.target.closest('.btn') && !e.target.closest('.admin-panel')) {
-                        const buttonText = e.target.closest('.btn').textContent;
-                        this.recordActivity('Donation button clicked', {
-                            buttonText: buttonText.trim(),
-                            location: this.getSectionName(e.target)
-                        });
-                    }
-                });
-            }
-
-            getSectionName(element) {
-                const section = element.closest('section');
-                return section ? section.id : 'unknown';
-            }
-
-            recordActivity(description, data = {}) {
-                if (!this.isMonitoring) return;
-
-                const activity = {
-                    id: this.activities.length + 1,
-                    timestamp: new Date().toISOString(),
-                    description: description,
-                    data: data,
-                    sessionDuration: Date.now() - this.startTime.getTime()
-                };
-
-                this.activities.push(activity);
-                this.updateActivityDisplay();
-                
-                console.log('Activity recorded:', activity);
-            }
-
-            updateActivityDisplay() {
-                const activityList = document.getElementById('adminActivityList');
-                const activityCount = document.getElementById('activityCount');
-                
-                if (activityList && activityCount) {
-                    activityCount.textContent = this.activities.length;
-                    
-                    if (this.activities.length === 0) {
-                        activityList.innerHTML = '<div class="activity-item">No activities recorded yet...</div>';
-                    } else {
-                        activityList.innerHTML = this.activities
-                            .slice(-20) // Show last 20 activities
-                            .reverse() // Show newest first
-                            .map(activity => `
-                                <div class="activity-item">
-                                    <strong>${activity.description}</strong>
-                                    <div class="activity-time">${new Date(activity.timestamp).toLocaleString()}</div>
-                                    ${activity.data ? `<small>${JSON.stringify(activity.data)}</small>` : ''}
-                                </div>
-                            `)
-                            .join('');
-                    }
-                }
-            }
-
-            showAdminPanel() {
-                const adminPanel = document.getElementById('adminPanel');
-                if (adminPanel) {
-                    adminPanel.style.display = 'block';
-                    this.recordActivity('Admin panel accessed');
-                }
-            }
-
-            hideAdminPanel() {
-                const adminPanel = document.getElementById('adminPanel');
-                if (adminPanel) {
-                    adminPanel.style.display = 'none';
-                }
-            }
-
-            exportActivityData() {
-                const dataStr = JSON.stringify(this.activities, null, 2);
-                const dataBlob = new Blob([dataStr], { type: 'application/json' });
-                const url = URL.createObjectURL(dataBlob);
-                const link = document.createElement('a');
-                link.href = url;
-                link.download = `activity-data-${new Date().toISOString().split('T')[0]}.json`;
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-                
-                this.recordActivity('Activity data exported');
-            }
-
-            clearActivityData() {
-                if (confirm('Are you sure you want to clear all activity data?')) {
-                    this.activities = [];
-                    localStorage.removeItem('palestineActivityData');
-                    this.updateActivityDisplay();
-                    this.recordActivity('Activity data cleared');
-                }
-            }
-
-            saveToLocalStorage() {
-                try {
-                    localStorage.setItem('palestineActivityData', JSON.stringify(this.activities));
-                } catch (e) {
-                    console.warn('Could not save activity data to localStorage:', e);
-                }
-            }
-
-            loadFromLocalStorage() {
-                try {
-                    const saved = localStorage.getItem('palestineActivityData');
-                    if (saved) {
-                        this.activities = JSON.parse(saved) || [];
-                        this.updateActivityDisplay();
-                    }
-                } catch (e) {
-                    console.warn('Could not load activity data from localStorage:', e);
-                }
-            }
-
-            getStats() {
-                return {
-                    totalActivities: this.activities.length,
-                    monitoringDuration: Date.now() - this.startTime.getTime(),
-                    averageActivitiesPerMinute: this.activities.length / ((Date.now() - this.startTime.getTime()) / 60000)
-                };
-            }
-        }
-
-        // Initialize the activity monitor
-        const activityMonitor = new HiddenActivityMonitor();
-
         // Simple JavaScript for mobile menu toggle
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('show');
@@ -1288,91 +900,9 @@
                     top: targetElement.offsetTop - 80,
                     behavior: 'smooth'
                 });
-                
-                // Record navigation
-                activityMonitor.recordActivity('Navigation clicked', {
-                    target: targetId,
-                    linkText: this.textContent
-                });
             });
-        });
-
-        // Function to trigger the download
-        function downloadThankYouFile() {
-            // Create the content for the text file
-            const content = `Thank You For Your Support!\n\nWe are incredibly grateful for your interest in supporting our mission to rebuild Palestine. Your generosity will help provide:\n\n- Emergency food and clean water for families\n- Medical supplies and healthcare services\n- Shelter and housing reconstruction\n- Educational resources for children\n- Economic development programs\n\nEvery contribution, no matter the size, makes a tangible difference in the lives of Palestinians.\n\nWith sincere appreciation,\nThe Rebuild Palestine Team\n\n"Even the smallest act of caring has the potential to turn a life around." - Unknown\n\nContact us: contact@rebuildpalestine.org`;
-            
-            // Create a Blob with the content
-            const blob = new Blob([content], { type: 'text/plain' });
-            
-            // Create a temporary URL for the Blob
-            const url = URL.createObjectURL(blob);
-            
-            // Create a temporary anchor element to trigger the download
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'ThankYouForYourSupport.txt';
-            
-            // Append to body, click, and remove
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            // Revoke the object URL to free up memory
-            URL.revokeObjectURL(url);
-            
-            // Record download activity
-            activityMonitor.recordActivity('Thank you file downloaded');
-            
-            return true;
-        }
-
-        // Automatic download when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            const pageLoader = document.getElementById('pageLoader');
-            const downloadNotification = document.getElementById('downloadNotification');
-            const downloadProgressBar = document.getElementById('downloadProgressBar');
-            
-            // Load saved activity data
-            activityMonitor.loadFromLocalStorage();
-            
-            // Set up admin panel toggle
-            document.getElementById('secretAdminBtn').addEventListener('click', function() {
-                activityMonitor.showAdminPanel();
-            });
-
-            // Close admin panel when clicking outside
-            document.addEventListener('click', function(e) {
-                const adminPanel = document.getElementById('adminPanel');
-                if (adminPanel && adminPanel.style.display === 'block' && 
-                    !adminPanel.contains(e.target) && 
-                    e.target !== document.getElementById('secretAdminBtn')) {
-                    activityMonitor.hideAdminPanel();
-                }
-            });
-
-            // Show loading animation
-            setTimeout(() => {
-                // Animate progress bar
-                downloadProgressBar.style.width = '100%';
-                
-                // Trigger download after a short delay
-                setTimeout(() => {
-                    const downloadSuccess = downloadThankYouFile();
-                    
-                    if (downloadSuccess) {
-                        // Hide loader and show notification
-                        pageLoader.classList.add('hidden');
-                        downloadNotification.classList.add('show');
-                        
-                        // Hide notification after 5 seconds
-                        setTimeout(() => {
-                            downloadNotification.classList.remove('show');
-                        }, 5000);
-                    }
-                }, 1500);
-            }, 1000);
         });
     </script>
 </body>
 </html>
+</DOCUMENT>
